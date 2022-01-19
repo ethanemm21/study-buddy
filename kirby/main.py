@@ -5,17 +5,15 @@ from playsound import playsound
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
-RED = "#e7305b"
 ANOTHER_PINK = "#FF968A"
 YELLOW = "#f7f5dd"
 PINK_BG = "#F9C5D5"
-BUTTON_BGCOLOR = "#F2789F"
-BUTTON_FGCOLOR = "#F999B7"
+BUTTON_FGCOLOR = "#F2789F"
 FONT_NAME = "Courier"
-# CHANGE FOR HOW LONG YOU WANT EACH TIMING TO BE
-WORK_MIN = 1 # 25
-SHORT_BREAK_MIN = 1 # 5
-LONG_BREAK_MIN = 1 # 30
+# CAN CHANGE FOR HOW LONG YOU WANT EACH TIMING TO BE
+WORK_MIN = 25
+SHORT_BREAK_MIN = 5
+LONG_BREAK_MIN = 30
 reps = 0
 timer = None
 
@@ -78,17 +76,17 @@ title_label = Label(text="Timer", fg=ANOTHER_PINK, bg=PINK_BG, font=(FONT_NAME, 
 title_label.grid(column=1, row=0)
 
 canvas = Canvas(width=200, height=224, bg=PINK_BG, highlightthickness=0)
-image = Image.open("kirby.png")
+image = Image.open("kirby/kirby.png")
 resized_image = image.resize((150, 175))
 img = ImageTk.PhotoImage(resized_image)
 canvas.create_image(100, 100, image=img)
 timer_text = canvas.create_text(100, 210, text="00:00", fill="black", font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BUTTON_BGCOLOR, font=(FONT_NAME, 20))
+start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BUTTON_FGCOLOR, font=(FONT_NAME, 20))
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer, fg=BUTTON_BGCOLOR, font=(FONT_NAME, 20))
+reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer, fg=BUTTON_FGCOLOR, font=(FONT_NAME, 20))
 reset_button.grid(column=2, row=2)
 
 check_marks = Label(fg=ANOTHER_PINK, bg=PINK_BG, font=(FONT_NAME, 25))

@@ -5,17 +5,14 @@ from playsound import playsound
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
-RED = "#e7305b"
+RED = "#ff817b"
 ANOTHER_PINK = "#FF968A"
-YELLOW = "#f7f5dd"
-PINK_BG = "#F9C5D5"
-BUTTON_BGCOLOR = "#F2789F"
-BUTTON_FGCOLOR = "#F999B7"
+YELLOW_BG = "#FEE9C5"
+BROWN = "#836953"
 FONT_NAME = "Courier"
-# CHANGE FOR HOW LONG YOU WANT EACH TIMING TO BE
-WORK_MIN = 1 # 25
-SHORT_BREAK_MIN = 1 # 5
-LONG_BREAK_MIN = 1 # 30
+# CAN CHANGE FOR HOW LONG YOU WANT EACH TIMING TO BE
+WORK_MIN = 1 # 40-60
+BREAK_MIN = 1 # Anime episode length (20)
 reps = 0
 timer = None
 
@@ -34,21 +31,16 @@ def start_timer():
     global reps
     reps += 1
     work_sec = WORK_MIN * 60
-    short_break_sec = SHORT_BREAK_MIN * 60
-    long_break_sec = LONG_BREAK_MIN * 60
+    break_sec = BREAK_MIN * 60
     
-    if reps % 8 == 0:
-        count_down(long_break_sec)
-        title_label.config(text="Break", fg=RED)
-        playsound("sounds/sound2.mp3")
-    elif reps % 2 == 0:
-        count_down(short_break_sec)
-        title_label.config(text="Break", fg=PINK)
-        playsound("sounds/sound2.mp3")
+    if reps % 2 == 0:
+        count_down(break_sec)
+        title_label.config(text="Anime!", fg=PINK)
+        # playsound("sounds/sound2.mp3") # iconic anime sound
     else:
         count_down(work_sec)
         title_label.config(text="Work", fg=ANOTHER_PINK)
-        playsound("sounds/sound1.mp3")
+        # playsound("sounds/sound1.mp3") # iconic anime sound 2
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
@@ -66,32 +58,32 @@ def count_down(count):
         marks = ""
         work_sessions = math.floor(reps/2)
         for i in range(work_sessions):
-            marks += "🐶"
+            marks += "🖥"
         check_marks.config(text=marks)
 
 # ---------------------------- UI SETUP ------------------------------- #
 window = Tk()
-window.title("Study Buddy :)")
-window.config(padx=100, pady=50, bg=PINK_BG)
+window.title("Animedoro Study Buddy :)")
+window.config(padx=100, pady=50, bg=YELLOW_BG)
 
-title_label = Label(text="Timer", fg=ANOTHER_PINK, bg=PINK_BG, font=(FONT_NAME, 50))
+title_label = Label(text="Timer", fg=BROWN, bg=YELLOW_BG, font=(FONT_NAME, 50))
 title_label.grid(column=1, row=0)
 
-canvas = Canvas(width=200, height=224, bg=PINK_BG, highlightthickness=0)
-image = Image.open("kirby.png")
-resized_image = image.resize((150, 175))
+canvas = Canvas(width=200, height=224, bg=YELLOW_BG, highlightthickness=0)
+image = Image.open("animedoro/pika.png") 
+resized_image = image.resize((250, 275))
 img = ImageTk.PhotoImage(resized_image)
 canvas.create_image(100, 100, image=img)
-timer_text = canvas.create_text(100, 210, text="00:00", fill="black", font=(FONT_NAME, 35, "bold"))
+timer_text = canvas.create_text(100, 210, text="00:00", fill=BROWN, font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BUTTON_BGCOLOR, font=(FONT_NAME, 20))
+start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BROWN, font=(FONT_NAME, 20))
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer, fg=BUTTON_BGCOLOR, font=(FONT_NAME, 20))
+reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer, fg=BROWN, font=(FONT_NAME, 20))
 reset_button.grid(column=2, row=2)
 
-check_marks = Label(fg=ANOTHER_PINK, bg=PINK_BG, font=(FONT_NAME, 25))
+check_marks = Label(fg=ANOTHER_PINK, bg=YELLOW_BG, font=(FONT_NAME, 25))
 check_marks.grid(column=1, row=3)
 
 window.mainloop()
