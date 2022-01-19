@@ -1,5 +1,5 @@
 # study-buddy
-Cute study buddy that helps you study with the Pomodoro technique!
+Cute study buddy that helps you study with the Pomodoro (or Animedoro) technique!
 
 ## Kirby
 The Kirby folder has a Kirby, pink-themed Pomodoro timer
