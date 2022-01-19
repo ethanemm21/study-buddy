@@ -74,7 +74,7 @@ image = Image.open("animedoro/pika.png")
 resized_image = image.resize((250, 275))
 img = ImageTk.PhotoImage(resized_image)
 canvas.create_image(100, 100, image=img)
-timer_text = canvas.create_text(100, 210, text="00:00", fill=BROWN, font=(FONT_NAME, 35, "bold"))
+timer_text = canvas.create_text(100, 210, text="00:00", fill=RED, font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
 start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BROWN, font=(FONT_NAME, 20))
