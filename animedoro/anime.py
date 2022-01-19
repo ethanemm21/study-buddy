@@ -11,7 +11,7 @@ YELLOW_BG = "#FEE9C5"
 BROWN = "#836953"
 FONT_NAME = "Courier"
 # CAN CHANGE FOR HOW LONG YOU WANT EACH TIMING TO BE
-WORK_MIN = 1 # 40-60
+WORK_MIN = 1 # 40-60 - add a "next" button? to go to break if finish work before 60 min
 BREAK_MIN = 1 # Anime episode length (20)
 reps = 0
 timer = None
@@ -36,11 +36,11 @@ def start_timer():
     if reps % 2 == 0:
         count_down(break_sec)
         title_label.config(text="Anime!", fg=PINK)
-        # playsound("sounds/sound2.mp3") # iconic anime sound
+        playsound("animedoro/sounds/erwin_sasageyo.mp3") # shinzo wo sasegayo
     else:
         count_down(work_sec)
         title_label.config(text="Work", fg=ANOTHER_PINK)
-        # playsound("sounds/sound1.mp3") # iconic anime sound 2
+        playsound("animedoro/sounds/AlmightyPush.mp3") # Almighty Push
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):

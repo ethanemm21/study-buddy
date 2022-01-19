@@ -38,15 +38,15 @@ def start_timer():
     if reps % 8 == 0:
         count_down(long_break_sec)
         title_label.config(text="Break", fg=RED)
-        playsound("sounds/sound2.mp3")
+        playsound("kirby/sounds/sound2.mp3")
     elif reps % 2 == 0:
         count_down(short_break_sec)
         title_label.config(text="Break", fg=PINK)
-        playsound("sounds/sound2.mp3")
+        playsound("kirby/sounds/sound2.mp3")
     else:
         count_down(work_sec)
         title_label.config(text="Work", fg=ANOTHER_PINK)
-        playsound("sounds/sound1.mp3")
+        playsound("kirby/sounds/sound1.mp3")
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
 def count_down(count):
