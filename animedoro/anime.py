@@ -11,8 +11,8 @@ YELLOW_BG = "#FEE9C5"
 BROWN = "#836953"
 FONT_NAME = "Courier"
 # CAN CHANGE FOR HOW LONG YOU WANT EACH TIMING TO BE
-WORK_MIN = 1 # 40-60 - add a "next" button? to go to break if finish work before 60 min
-BREAK_MIN = 1 # Anime episode length (20)
+WORK_MIN = 60 # Can click "next" if finish work before 60 min
+BREAK_MIN = 20 # Anime episode length without opening and ending songs (20)
 reps = 0
 timer = None
 
@@ -32,14 +32,15 @@ def start_timer():
     reps += 1
     work_sec = WORK_MIN * 60
     break_sec = BREAK_MIN * 60
+    start_button.config(text="Next")
     
     if reps % 2 == 0:
         count_down(break_sec)
-        title_label.config(text="Anime!", fg=PINK)
+        title_label.config(text="Anime!", fg=BROWN)
         playsound("animedoro/sounds/erwin_sasageyo.mp3") # shinzo wo sasegayo
     else:
         count_down(work_sec)
-        title_label.config(text="Work", fg=ANOTHER_PINK)
+        title_label.config(text="Work", fg=BROWN)
         playsound("animedoro/sounds/AlmightyPush.mp3") # Almighty Push
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- # 
@@ -77,13 +78,13 @@ canvas.create_image(100, 100, image=img)
 timer_text = canvas.create_text(100, 210, text="00:00", fill=RED, font=(FONT_NAME, 35, "bold"))
 canvas.grid(column=1, row=1)
 
-start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BROWN, font=(FONT_NAME, 20))
+start_button = Button(text="Start", highlightthickness=0, command=start_timer, fg=BROWN, font=(FONT_NAME, 20), width=5)
 start_button.grid(column=0, row=2)
 
-reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer, fg=BROWN, font=(FONT_NAME, 20))
+reset_button = Button(text="Reset", highlightthickness=0, command=reset_timer, fg=BROWN, font=(FONT_NAME, 20), width=5)
 reset_button.grid(column=2, row=2)
 
-check_marks = Label(fg=ANOTHER_PINK, bg=YELLOW_BG, font=(FONT_NAME, 25))
+check_marks = Label(bg=YELLOW_BG, font=(FONT_NAME, 25))
 check_marks.grid(column=1, row=3)
 
 window.mainloop()
