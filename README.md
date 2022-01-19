@@ -10,7 +10,7 @@ The Kirby folder has a Kirby, pink-themed Pomodoro timer
 3. Run 'main.py' from kirby folder and work along with your study buddy! 
 
 ## Animedoro
-Inspired by Josh Chen's [Animedoro technique](https://www.youtube.com/watch?v=bUjGZJIgse0&t=117s&ab_channel=JoshChen), I decided to add an Aniemdoro timer, which helps you to study/work and take breaks for anime episodes. Currently, I have Pain's "Almighty Push" quote as the sound that plays before you work and Erwin Smith's "Shinzou wo Sasageyo!" quote before you watch anime 😎
+Inspired by Josh Chen's [Animedoro technique](https://www.youtube.com/watch?v=bUjGZJIgse0&t=117s&ab_channel=JoshChen), I decided to add an Animedoro timer, which helps you to study/work and take breaks for anime episodes. Currently, I have Pain's "Almighty Push" quote as the sound that plays before you work and Erwin Smith's "Shinzou wo Sasageyo!" quote before you watch anime 😎
 
 ### How to use
 1. Clone the GitHub repo or download the ZIP 
