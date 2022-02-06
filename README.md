@@ -6,7 +6,7 @@ The Kirby folder has a Kirby, pink-themed Pomodoro timer
 
 ### How to use
 1. Clone the GitHub repo or download the ZIP 
-2. If you'd like edit `WORK_MIN`, `SHORT_BREAK_MIN`, or `LONG_BREAK_MIN` in `main.py`
+2. If you'd like, edit `WORK_MIN`, `SHORT_BREAK_MIN`, or `LONG_BREAK_MIN` in `main.py`
 3. Run `main.py` from kirby folder and work along with your study buddy! 
 
 ## Animedoro
